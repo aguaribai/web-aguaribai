@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aguaribai IA — Consultoría e implementación de IA para PyMEs</title>
+<meta name="description" content="Ayudamos a PyMEs argentinas a atender clientes 24/7, reducir costos operativos y vender más con chatbots, agentes de voz y automatización con IA. Consultoría inicial sin cargo.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aguaribai.com">
+<meta property="og:site_name" content="Aguaribai IA">
+<meta property="og:title" content="Aguaribai IA — Consultoría e IA para acelerar PyMEs">
+<meta property="og:description" content="Chatbots, agentes de voz y automatización con IA para que tu negocio atienda 24/7 y opere con menos costos. Consultoría inicial sin cargo.">
+<meta property="og:image" content="https://aguaribai.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_AR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aguaribai IA — Consultoría e IA para acelerar PyMEs">
+<meta name="twitter:description" content="Chatbots, agentes de voz y automatización con IA para PyMEs argentinas. Consultoría inicial sin cargo.">
+<meta name="twitter:image" content="https://aguaribai.com/assets/og-image.png">
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="canonical" href="https://aguaribai.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="container">
+    <a href="#inicio" class="logo">
+      <img src="assets/tree-white.png" alt="" width="34" height="34">
+      <span class="logo-text">
+        <span class="name">Aguaribai</span>
+        <span class="tag">IA BUSINESS</span>
+      </span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#faq">Preguntas frecuentes</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#contacto" class="btn btn-primary">Consultoría gratis</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#faq">Preguntas frecuentes</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#contacto" class="btn btn-primary btn-block">Consultoría gratis</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <canvas id="networkCanvas" class="hero-network" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="hero-grid">
+      <div data-reveal>
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+          +47% de aumento promedio en conversiones
+        </div>
+
+        <h1>¿Cómo hacen otros negocios para atender clientes <span class="accent-green">24/7 sin sumar personal</span>?</h1>
+
+        <p class="lead">
+          Cada vez más PyMEs argentinas están sumando IA a su operación diaria: <strong>responden al instante, reducen costos y liberan a su equipo</strong> de las tareas repetitivas. Te mostramos cómo hacerlo, sin vueltas.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#contacto" class="btn btn-primary btn-lg">
+            Reserva tu consultoría gratis
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#servicios" class="btn btn-outline btn-lg">Ver servicios</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m23 6-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+              <span class="count-target">+47%</span>
+            </div>
+            <div class="label">Aumento en conversiones</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <span class="count-target">24/7</span>
+            </div>
+            <div class="label">Atención continua</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span class="count-target">-60%</span>
+            </div>
+            <div class="label">Reducción de costos operativos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-wrap" data-reveal>
+        <div class="chat-card">
+          <div class="chat-head">
+            <div class="chat-avatar">IA</div>
+            <div>
+              <div class="who">Asistente Aguaribai</div>
+              <div class="status">En línea ahora</div>
+            </div>
+            <div class="channel-badge">WhatsApp</div>
+          </div>
+          <div class="chat-body">
+            <div class="msg user">Hola, ¿tienen disponibilidad para mañana?<span class="time">10:32</span></div>
+            <div class="msg bot">¡Por supuesto! Ya revisé tu agenda y tengo 3 horarios perfectos. ¿Preferís mañana o tarde?<span class="time">10:32</span></div>
+            <div class="msg user">Mañana a la mañana me viene bien<span class="time">10:35</span></div>
+            <div class="msg bot">✅ Listo! Agendado mañana 9:00hs. Confirmación enviada por email y WhatsApp. ¿Algo más?<span class="time">10:35</span></div>
+            <div class="typing-dots"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="chat-float-badge badge-top"><strong class="count-target">2.1s</strong>Tiempo de respuesta</div>
+        <div class="chat-float-badge badge-bottom"><strong class="count-target">98%</strong>Satisfacción</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAIN POINTS ============ -->
+<section id="oportunidad">
+  <div class="container">
+    <div class="pain-intro" data-reveal>
+      <h2>Responder rápido ya <span class="accent-green">no es un lujo</span>, es lo que se espera</h2>
+      <p>Cada consulta sin respuesta a tiempo es una venta que se enfría. Esto es lo que suele frenar a un negocio que todavía atiende todo de forma manual:</p>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card" data-reveal>
+        <div class="pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Clientes esperando</h3>
+        <p>Fuera de horario o en horas pico, las consultas se acumulan y algunas nunca llegan a responderse.</p>
+      </div>
+      <div class="pain-card" data-reveal>
+        <div class="pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Costos que suben</h3>
+        <p>Sumar personal para cubrir tareas repetitivas es caro, y ese tiempo no siempre termina cerrando ventas.</p>
+      </div>
+      <div class="pain-card" data-reveal>
+        <div class="pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Equipo saturado</h3>
+        <p>Tu equipo pasa buena parte del día respondiendo lo mismo, en vez de enfocarse en cerrar negocios.</p>
+      </div>
+      <div class="pain-card" data-reveal>
+        <div class="pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 7-8.5 8.5-5-5L2 18"/><path d="M16 7h6v6"/></svg></div>
+        <h3>El mercado avanza</h3>
+        <p>Cada vez más negocios en tu rubro ya suman IA a su operación diaria, con resultados medibles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSIGHT BANNER ============ -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="insight-banner" data-reveal>
+      <div class="insight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div>
+        <h3>Lo que estamos viendo en el mercado</h3>
+        <p>Los negocios que ya suman IA a su operación están respondiendo más rápido, atendiendo más volumen y operando con menos costo fijo. <strong>Te mostramos cómo aplicarlo en el tuyo</strong>, con un análisis concreto de tu negocio antes de proponer nada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="beneficios">
+  <div class="container">
+    <div class="features-header" data-reveal>
+      <div class="section-eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+        Funciona desde el día uno
+      </div>
+      <h2 class="section-title">Resultados medibles, <span class="accent-green">no promesas</span></h2>
+      <p class="section-subtitle mx-auto">Implementamos soluciones de IA que resuelven problemas reales de tu operación diaria y que podés medir desde el primer mes.</p>
+    </div>
+
+    <div class="features-layout">
+      <div class="feature-list" data-reveal>
+        <div class="feature-item">
+          <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div>
+            <h3>Respuestas instantáneas</h3>
+            <p>Tus clientes reciben respuesta al instante, 24/7, sin depender de que alguien esté disponible en ese momento.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <h3>Reduce costos operativos</h3>
+            <p>La IA absorbe el volumen de tareas repetitivas para que tu equipo se enfoque en lo que realmente mueve la aguja.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m23 6-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></div>
+          <div>
+            <h3>Escala sin fricción</h3>
+            <p>Tu negocio puede crecer en volumen de consultas sin tener que sumar personal en la misma proporción.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
+          <div>
+            <h3>Implementación rápida</h3>
+            <p>En pocas semanas tenés la solución funcionando, con acompañamiento y sin que necesites conocimientos técnicos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-card" data-reveal>
+        <h3>Resultados que medimos en nuestros clientes</h3>
+        <div class="result-row">
+          <span class="label">Aumento en conversiones</span>
+          <span class="value count-target">+47%</span>
+        </div>
+        <div class="result-row">
+          <span class="label">Tiempo promedio de respuesta</span>
+          <span class="value count-target">2.1s</span>
+        </div>
+        <div class="result-row">
+          <span class="label">Reducción en consultas repetitivas</span>
+          <span class="value count-target">-68%</span>
+        </div>
+        <div class="result-row">
+          <span class="label">Disponibilidad</span>
+          <span class="value count-target">24/7</span>
+        </div>
+        <div class="roi-banner">
+          <div class="roi-title">ROI positivo</div>
+          <div class="roi-sub">Desde el primer mes de implementación</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section id="numeros" style="background: var(--navy-900);">
+  <div class="container">
+    <div class="text-center" data-reveal style="margin-bottom: 48px;">
+      <h2 class="section-title">Así medimos el impacto real en nuestros clientes</h2>
+      <p class="section-subtitle mx-auto">Un mismo criterio de medición, en todos nuestros proyectos.</p>
+    </div>
+
+    <div class="stats-grid" data-reveal>
+      <div class="stat-box">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m23 6-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></div>
+        <div class="value count-target">+47%</div>
+        <div class="caption">Aumento promedio en conversiones</div>
+      </div>
+      <div class="stat-box">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="value count-target">24/7</div>
+        <div class="caption">Disponibilidad completa</div>
+      </div>
+      <div class="stat-box">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="value count-target">-60%</div>
+        <div class="caption">Reducción en costos operativos</div>
+      </div>
+      <div class="stat-box">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <div class="value count-target">150+</div>
+        <div class="caption">Empresas ya trabajando con nosotros</div>
+      </div>
+      <div class="stat-box">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="value count-target">98%</div>
+        <div class="caption">Satisfacción del cliente</div>
+      </div>
+      <div class="stat-box">
+        <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
+        <div class="value count-target">2.1s</div>
+        <div class="caption">Tiempo promedio de respuesta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="servicios">
+  <div class="container">
+    <div class="text-center" data-reveal style="margin-bottom: 48px;">
+      <div class="section-eyebrow" style="margin-left:auto;margin-right:auto;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Nuestros servicios
+      </div>
+      <h2 class="section-title">¿Cómo te ayudamos exactamente?</h2>
+      <p class="section-subtitle mx-auto">Te mostramos exactamente qué hace cada solución y cómo impacta en tu negocio.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card" data-reveal>
+        <div class="service-top">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <span class="service-tag">Más elegido</span>
+        </div>
+        <h3>Chatbots inteligentes</h3>
+        <div class="kicker">Atención al cliente que nunca duerme</div>
+        <p class="desc">Automatizan la atención, responden preguntas frecuentes y califican prospectos las 24 horas del día.</p>
+        <ul class="service-feats">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Respuestas automáticas inteligentes</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Integración con WhatsApp y web</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Análisis de conversaciones en tiempo real</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Escalamiento automático a humanos</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline btn-block">Consultar este servicio</a>
+      </article>
+
+      <article class="service-card" data-reveal>
+        <div class="service-top">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <span class="service-tag">Alta conversión</span>
+        </div>
+        <h3>Agentes de voz IA</h3>
+        <div class="kicker">Como tener el mejor vendedor, 24/7</div>
+        <p class="desc">Asistentes virtuales que atienden llamadas, agendan citas y manejan consultas con voz natural en español rioplatense.</p>
+        <ul class="service-feats">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Voz natural y convincente</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Manejo de objeciones automático</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Integración telefónica completa</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Agenda sincronizada automáticamente</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline btn-block">Consultar este servicio</a>
+      </article>
+
+      <article class="service-card" data-reveal>
+        <div class="service-top">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M18.7 8 13 13.7l-4-4L3 16"/></svg></div>
+          <span class="service-tag">Escalabilidad</span>
+        </div>
+        <h3>Automatización inteligente</h3>
+        <div class="kicker">Tu empresa funciona sola</div>
+        <p class="desc">Optimiza procesos repetitivos, analiza datos y ayuda a tomar decisiones automáticas para escalar tu empresa.</p>
+        <ul class="service-feats">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Análisis predictivo de ventas</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Procesos automáticos personalizados</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Reportes en tiempo real</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Integración con tus sistemas actuales</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline btn-block">Consultar este servicio</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="proceso" style="background: var(--navy-900);">
+  <div class="container">
+    <div class="text-center" data-reveal>
+      <div class="section-eyebrow" style="margin-left:auto;margin-right:auto;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+        El proceso
+      </div>
+      <h2 class="section-title">Nuestro proceso es así de simple</h2>
+      <p class="section-subtitle mx-auto">Sin vueltas, sin demoras. En pocas semanas tenés tu IA funcionando y generando resultados reales.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step" data-reveal>
+        <div class="process-circle">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="num">1</span>
+        </div>
+        <span class="time-badge">30 min</span>
+        <h3>Análisis</h3>
+        <div class="kicker">Entendemos tu negocio</div>
+        <p>En 30 minutos analizamos tu empresa, identificamos oportunidades y diseñamos la estrategia adecuada.</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="process-circle">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a6 6 0 0 0-4 10.5c.6.5 1 1 1 2.5h6c0-1.5.4-2 1-2.5A6 6 0 0 0 12 2Z"/></svg>
+          <span class="num">2</span>
+        </div>
+        <span class="time-badge">2-3 días</span>
+        <h3>Diseño</h3>
+        <div class="kicker">Creamos la solución</div>
+        <p>Diseñamos una solución personalizada que resuelve exactamente los problemas de tu operación.</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="process-circle">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4"/></svg>
+          <span class="num">3</span>
+        </div>
+        <span class="time-badge">1-2 semanas</span>
+        <h3>Desarrollo</h3>
+        <div class="kicker">Implementamos y configuramos</div>
+        <p>Desarrollamos e integramos la IA con tus sistemas existentes. Todo funciona desde el primer día.</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="process-circle">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+          <span class="num">4</span>
+        </div>
+        <span class="time-badge">1 día</span>
+        <h3>Lanzamiento</h3>
+        <div class="kicker">Activamos y capacitamos</div>
+        <p>Activamos el sistema, capacitamos a tu equipo y te damos soporte completo durante 6 meses.</p>
+      </div>
+    </div>
+
+    <div class="guarantee-box" data-reveal>
+      <h3>¿Te parece demasiado bueno para ser verdad?</h3>
+      <p>Entendemos el escepticismo. Por eso ofrecemos una <strong>garantía de resultados:</strong> si no ves resultados medibles en los primeros 30 días, te devolvemos el 100% del dinero.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="container">
+    <div class="text-center" data-reveal style="margin-bottom: 48px;">
+      <div class="section-eyebrow" style="margin-left:auto;margin-right:auto;">Preguntas frecuentes</div>
+      <h2 class="section-title">Resolvemos tus dudas</h2>
+      <p class="section-subtitle mx-auto">Las preguntas más comunes sobre nuestras soluciones de IA.</p>
+    </div>
+
+    <div class="faq-list" data-reveal>
+      <div class="faq-item open">
+        <button class="faq-question">
+          ¿Cuánto tiempo toma implementar una solución de IA?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Dependiendo de la complejidad, entre 1 y 4 semanas. Los chatbots simples se implementan en una semana, mientras que sistemas más complejos pueden tomar hasta un mes. Te damos un cronograma exacto después del análisis inicial.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Necesito conocimientos técnicos para usar las soluciones?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">No. Diseñamos las soluciones para que tu equipo las use sin fricción, con una capacitación incluida en la implementación y soporte durante los primeros 6 meses.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Qué pasa si la IA no entiende una consulta?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">El sistema escala automáticamente la conversación a una persona de tu equipo cuando detecta que no puede resolver la consulta, sin que el cliente pierda continuidad.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Es seguro para mi información empresarial?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Sí. Trabajamos con estándares de seguridad y confidencialidad para proteger los datos de tu empresa y de tus clientes en cada integración.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Funciona con mis sistemas actuales?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">En la mayoría de los casos sí. Durante el análisis inicial revisamos tus herramientas actuales (CRM, agenda, WhatsApp Business, etc.) y diseñamos la integración específica para tu stack.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cuál es el retorno de inversión típico?
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Varía según el servicio y el volumen de tu operación, pero nuestros clientes suelen ver ROI positivo desde el primer mes, entre la reducción de costos operativos y el aumento en conversiones.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / FORM ============ -->
+<section id="contacto" style="background: var(--navy-900);">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-info" data-reveal>
+        <div class="section-eyebrow">Consultoría gratis</div>
+        <h2>Reservá tu consultoría sin cargo</h2>
+        <p>30 minutos para entender tu negocio, identificar oportunidades concretas y ver si somos un buen fit. Sin compromiso de compra.</p>
+
+        <div class="contact-perks">
+          <div class="contact-perk">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><strong>Consulta gratuita</strong><span>Sin compromiso de compra</span></div>
+          </div>
+          <div class="contact-perk">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><strong>Implementación rápida</strong><span>1 a 4 semanas según el proyecto</span></div>
+          </div>
+          <div class="contact-perk">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><strong>Soporte incluido</strong><span>6 meses de acompañamiento</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card" data-reveal>
+        <div id="formStatus" class="form-status"></div>
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="TU_ACCESS_KEY_DE_WEB3FORMS">
+          <input type="hidden" name="subject" value="Nueva consulta desde aguaribai.com">
+          <input type="checkbox" name="botcheck" class="visually-hidden" style="display:none">
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-field">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-field">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 ...">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="servicio">¿Qué te interesa?</label>
+            <select id="servicio" name="servicio">
+              <option value="Chatbots inteligentes">Chatbots inteligentes</option>
+              <option value="Agentes de voz IA">Agentes de voz IA</option>
+              <option value="Automatización inteligente">Automatización inteligente</option>
+              <option value="No estoy seguro / quiero asesoramiento">No estoy seguro, quiero asesoramiento</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="mensaje">Contanos brevemente tu negocio</label>
+            <textarea id="mensaje" name="mensaje" placeholder="A qué se dedica tu empresa, qué proceso te gustaría automatizar..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBtn">
+            Reservar mi consultoría gratis
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+
+          <p class="form-note">Te contactamos dentro de las próximas 24hs hábiles. Tus datos no se comparten con terceros.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="cta-final">
+  <div class="container">
+    <div class="final-cta" data-reveal>
+      <div class="section-eyebrow" style="margin-left:auto;margin-right:auto;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+        Más de 150 empresas ya lo usan
+      </div>
+      <h2>¿Listo para <span class="accent-green">automatizar</span> tu negocio?</h2>
+      <p>Sumate a más de 150 empresas argentinas que ya optimizaron su atención y redujeron costos con IA. <strong>Empezamos con una consultoría, sin compromiso.</strong></p>
+      <a href="#contacto" class="btn btn-primary btn-lg">
+        Reserva tu consultoría gratis
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <div class="final-perks">
+        <div class="final-perk">
+          <div class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <strong>Consulta gratuita</strong>
+          <span>Sin compromiso de compra</span>
+        </div>
+        <div class="final-perk">
+          <div class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <strong>Implementación rápida</strong>
+          <span>1 a 4 semanas máximo</span>
+        </div>
+        <div class="final-perk">
+          <div class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <strong>Soporte incluido</strong>
+          <span>6 meses de acompañamiento</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo">
+          <img src="assets/tree-white.png" alt="" width="30" height="30">
+          <span class="logo-text">
+            <span class="name">Aguaribai</span>
+            <span class="tag">IA BUSINESS</span>
+          </span>
+        </a>
+        <p>Consultoría e implementación de soluciones de IA para PyMEs argentinas: chatbots, agentes de voz y automatización a medida.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:contacto@aguaribai.com">contacto@aguaribai.com</a></li>
+          <li><a href="#contacto">Reservar consultoría</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Aguaribai IA. Todos los derechos reservados.</span>
+      <div class="footer-legal">
+        <a href="politica-de-privacidad.html">Política de privacidad</a>
+        <a href="politica-de-cookies.html">Política de cookies</a>
+        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/particles.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
