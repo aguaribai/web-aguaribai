@@ -158,6 +158,7 @@ section { position: relative; padding: 96px 0; }
   line-height: 1.1;
 }
 .logo-text .name { font-weight: 700; font-size: 18px; color: var(--text-primary); }
+.logo-text .name .accent { color: var(--green); }
 .logo-text .tag { font-size: 11px; color: var(--green); letter-spacing: 0.04em; font-weight: 500; }
 
 .nav-links {
