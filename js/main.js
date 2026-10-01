@@ -4,6 +4,17 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ---------- Año dinámico en el footer (rango 2025–actual) ----------
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    const currentYear = new Date().getFullYear();
+    yearEl.textContent = currentYear;
+    // Si todavía estamos en 2025, no mostramos el rango (evita "2025–2025")
+    if (currentYear <= 2025) {
+      yearEl.previousSibling.textContent = yearEl.previousSibling.textContent.replace('2025–', '');
+    }
+  }
+
   // ---------- Menú mobile ----------
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
