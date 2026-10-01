@@ -4,10 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ---------- Año dinámico en el footer ----------
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
   // ---------- Menú mobile ----------
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
