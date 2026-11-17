@@ -99,6 +99,17 @@
 @media (max-width: 520px) { .tree-legend { grid-template-columns: 1fr; } }
 .tree-note { margin-top: 10px; font-size: 13px; color: var(--text-muted); font-style: italic; }
 
+/* ---------- Costo de cada problema (sección "No necesitás una IA") ---------- */
+.pain-cost {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--surface-border);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.pain-cost strong { color: var(--green-light); font-weight: 600; }
+
 /* ---------- Grilla de 3 columnas para las áreas ---------- */
 .pain-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 960px) { .pain-grid.cols-3 { grid-template-columns: repeat(2, 1fr); } }
