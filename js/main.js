@@ -166,19 +166,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         const formData = new FormData(form);
-        const res = await fetch(form.action, {
+
+        // 1) CRM: carga el contacto y la oportunidad directamente
+        const crmUrl = form.dataset.crm;
+        const crmRequest = crmUrl
+          ? fetch(crmUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(Object.fromEntries(formData.entries())),
+              signal: AbortSignal.timeout(15000)
+            }).then(async (r) => {
+              const data = await r.json().catch(() => ({}));
+              return r.ok && data.ok === true;
+            }).catch(() => false)
+          : Promise.resolve(false);
+
+        // 2) Web3Forms: aviso por mail y respaldo si el CRM falla
+        const mailRequest = fetch(form.action, {
           method: 'POST',
           body: formData,
           headers: { 'Accept': 'application/json' }
-        });
-        const result = await res.json();
+        }).then(async (r) => {
+          const data = await r.json().catch(() => ({}));
+          return data.success === true;
+        }).catch(() => false);
 
-        if (result.success) {
+        const [crmOk, mailOk] = await Promise.all([crmRequest, mailRequest]);
+
+        if (crmOk || mailOk) {
           statusBox.textContent = '¡Listo! Recibimos tu consulta. Te contactamos dentro de las próximas 24hs hábiles.';
           statusBox.className = 'form-status success';
           form.reset();
         } else {
-          throw new Error(result.message || 'Error al enviar');
+          throw new Error('Error al enviar');
         }
       } catch (err) {
         statusBox.textContent = 'Hubo un problema al enviar el formulario. Por favor, intentá de nuevo o escribinos a contacto@aguaribai.com.';
