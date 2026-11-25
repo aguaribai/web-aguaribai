@@ -167,6 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const formData = new FormData(form);
 
+        // Origen de la visita (UTM / sitio de referencia), para saber de dónde viene cada consulta
+        const origen = typeof window.aguaribaiOrigen === 'function' ? window.aguaribaiOrigen() : {};
+        Object.keys(origen || {}).forEach((k) => {
+          if (origen[k]) formData.append(k, origen[k]);
+        });
+
         // 1) CRM: carga el contacto y la oportunidad directamente
         const crmUrl = form.dataset.crm;
         const crmRequest = crmUrl
@@ -194,6 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const [crmOk, mailOk] = await Promise.all([crmRequest, mailRequest]);
 
         if (crmOk || mailOk) {
+          if (typeof window.aguaribaiTrack === 'function') {
+            window.aguaribaiTrack('generate_lead', {
+              area: formData.get('servicio') || '',
+              origen: origen.utm_source || origen.referrer || 'directo'
+            });
+          }
           statusBox.textContent = '¡Listo! Recibimos tu consulta. Te contactamos dentro de las próximas 24hs hábiles.';
           statusBox.className = 'form-status success';
           form.reset();
