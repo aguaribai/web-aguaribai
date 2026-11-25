@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------- Ventana de confirmación del formulario ----------
-  function showFormModal(tipo, titulo, texto) {
+  function showFormModal(tipo, titulo, texto, siguiente) {
     const previo = document.getElementById('formModal');
     if (previo) previo.remove();
     const foco = document.activeElement;
@@ -160,10 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
         '</div>' +
         '<h3 id="formModalTitle"></h3>' +
         '<p id="formModalText"></p>' +
+        (siguiente ? '<p class="form-modal__next"></p>' : '') +
         '<button type="button" class="btn btn-primary form-modal__btn">Entendido</button>' +
       '</div>';
     overlay.querySelector('#formModalTitle').textContent = titulo;
     overlay.querySelector('#formModalText').textContent = texto;
+    if (siguiente) overlay.querySelector('.form-modal__next').textContent = siguiente;
     document.body.appendChild(overlay);
     document.body.classList.add('modal-open');
 
@@ -249,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           }
           form.reset();
-          showFormModal('success', '¡Consulta enviada!', 'Recibimos tu consulta. Te contactamos dentro de las próximas 24hs hábiles.');
+          showFormModal('success', '¡Gracias por dar el primer paso!', 'Detenerse a mirar cómo trabaja tu negocio es lo que separa a las empresas que mejoran de las que siguen igual. Ya hiciste lo más difícil: empezar.', 'Recibimos tu consulta. En las próximas 24 hs hábiles te escribimos para coordinar tu llamada gratuita.');
         } else {
           throw new Error('Error al enviar');
         }
