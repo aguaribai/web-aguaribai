@@ -1077,3 +1077,83 @@ body.modal-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .form-modal, .form-modal__box { animation: none; }
 }
+
+/* ============================================
+   Tarjeta "Así se ve una priorización"
+   ============================================ */
+.priority-sub { text-align: center; font-size: 13.5px; color: var(--text-muted); margin: -14px 0 22px; }
+.priority-list { list-style: none; position: relative; display: flex; flex-direction: column; gap: 10px; padding: 0; margin: 0; }
+.priority-list::before {
+  content: "";
+  position: absolute;
+  left: 29px; top: 34px; bottom: 34px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--green), var(--surface-border));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1.1s ease-out .25s;
+}
+.priority-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 14px 14px 14px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: opacity .5s ease, transform .5s ease;
+  transition-delay: calc(.35s + var(--i) * .22s);
+}
+.priority-item.is-first {
+  background: rgba(113, 200, 55, 0.09);
+  border-color: rgba(113, 200, 55, 0.35);
+}
+.priority-node {
+  position: relative; z-index: 1;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 16px;
+  background: var(--surface);
+  border: 2px solid var(--green);
+  color: var(--green-light);
+}
+.priority-item.is-first .priority-node { background: var(--green); color: #05130a; box-shadow: 0 0 0 5px rgba(113, 200, 55, 0.18); }
+.priority-body { min-width: 0; }
+.priority-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.priority-label { font-size: 15px; font-weight: 600; color: var(--text-primary); line-height: 1.35; }
+.priority-tag {
+  flex-shrink: 0;
+  font-size: 11.5px; font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(113, 200, 55, 0.12);
+  color: var(--green-light);
+  white-space: nowrap;
+}
+.priority-item.is-first .priority-tag { background: var(--green); color: #05130a; }
+.priority-meter { height: 6px; margin: 10px 0 8px; border-radius: 999px; background: var(--surface-border); overflow: hidden; }
+.priority-meter span {
+  display: block; height: 100%; width: var(--w);
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--green), #8fe356);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .9s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: calc(.6s + var(--i) * .22s);
+}
+.priority-benefit { font-size: 13.5px; color: var(--text-secondary); margin: 0; }
+
+.priority-card.is-visible .priority-list::before { transform: scaleY(1); }
+.priority-card.is-visible .priority-item { opacity: 1; transform: none; }
+.priority-card.is-visible .priority-meter span { transform: scaleX(1); }
+
+@media (max-width: 480px) {
+  .priority-top { flex-direction: column; gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .priority-list::before, .priority-item, .priority-meter span { transition: none; }
+}
