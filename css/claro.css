@@ -1,0 +1,15 @@
+/* Versión de prueba: secciones de lectura en claro, inicio y cierre en oscuro */
+.theme-light {
+  --navy-950: #f7f9fc;
+  --navy-900: #eef2f8;
+  --navy-800: #e6ecf5;
+  --surface: #ffffff;
+  --surface-border: #d9e1ec;
+  --text-primary: #0f1a2b;
+  --text-secondary: #44526a;
+  --text-muted: #66758c;
+  --green-light: #357a17;
+  --shadow-glow: 0 8px 30px rgba(15, 26, 43, 0.08);
+  background: var(--navy-950);
+  color: var(--text-primary);
+}
