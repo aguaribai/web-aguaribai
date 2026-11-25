@@ -142,6 +142,48 @@ document.addEventListener('DOMContentLoaded', () => {
     countEls.forEach(el => countObserver.observe(el));
   }
 
+  // ---------- Ventana de confirmación del formulario ----------
+  function showFormModal(tipo, titulo, texto) {
+    const previo = document.getElementById('formModal');
+    if (previo) previo.remove();
+    const foco = document.activeElement;
+    const ok = tipo === 'success';
+    const overlay = document.createElement('div');
+    overlay.id = 'formModal';
+    overlay.className = 'form-modal ' + (ok ? 'is-success' : 'is-error');
+    overlay.innerHTML =
+      '<div class="form-modal__box" role="dialog" aria-modal="true" aria-labelledby="formModalTitle" aria-describedby="formModalText">' +
+        '<div class="form-modal__icon" aria-hidden="true">' +
+          (ok
+            ? '<svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
+            : '<svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v6M12 17h.01"/></svg>') +
+        '</div>' +
+        '<h3 id="formModalTitle"></h3>' +
+        '<p id="formModalText"></p>' +
+        '<button type="button" class="btn btn-primary form-modal__btn">Entendido</button>' +
+      '</div>';
+    overlay.querySelector('#formModalTitle').textContent = titulo;
+    overlay.querySelector('#formModalText').textContent = texto;
+    document.body.appendChild(overlay);
+    document.body.classList.add('modal-open');
+
+    const btn = overlay.querySelector('.form-modal__btn');
+    function cerrar() {
+      overlay.remove();
+      document.body.classList.remove('modal-open');
+      document.removeEventListener('keydown', onKey);
+      if (foco && typeof foco.focus === 'function') foco.focus();
+    }
+    function onKey(e) {
+      if (e.key === 'Escape') cerrar();
+      if (e.key === 'Tab') { e.preventDefault(); btn.focus(); }
+    }
+    btn.addEventListener('click', cerrar);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) cerrar(); });
+    document.addEventListener('keydown', onKey);
+    btn.focus();
+  }
+
   // ---------- Formulario de contacto (Web3Forms) ----------
   const form = document.getElementById('contactForm');
   const statusBox = document.getElementById('formStatus');
@@ -206,15 +248,13 @@ document.addEventListener('DOMContentLoaded', () => {
               origen: origen.utm_source || origen.referrer || 'directo'
             });
           }
-          statusBox.textContent = '¡Listo! Recibimos tu consulta. Te contactamos dentro de las próximas 24hs hábiles.';
-          statusBox.className = 'form-status success';
           form.reset();
+          showFormModal('success', '¡Consulta enviada!', 'Recibimos tu consulta. Te contactamos dentro de las próximas 24hs hábiles.');
         } else {
           throw new Error('Error al enviar');
         }
       } catch (err) {
-        statusBox.textContent = 'Hubo un problema al enviar el formulario. Por favor, intentá de nuevo o escribinos a contacto@aguaribai.com.';
-        statusBox.className = 'form-status error';
+        showFormModal('error', 'No pudimos enviar tu consulta', 'Por favor, intentá de nuevo o escribinos a contacto@aguaribai.com.');
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;

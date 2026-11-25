@@ -1029,3 +1029,50 @@ section { position: relative; padding: 96px 0; }
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ============================================
+   Ventana de confirmación del formulario
+   ============================================ */
+body.modal-open { overflow: hidden; }
+.form-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(6, 9, 15, 0.78);
+  backdrop-filter: blur(4px);
+  animation: formModalFade .2s ease-out;
+}
+.form-modal__box {
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 30px 30px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  animation: formModalPop .25s ease-out;
+}
+.form-modal__icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.form-modal.is-success .form-modal__icon { background: rgba(113, 200, 55, 0.16); color: var(--green-light); box-shadow: 0 0 0 6px rgba(113, 200, 55, 0.08); }
+.form-modal.is-error .form-modal__icon { background: rgba(240, 90, 90, 0.14); color: #f08080; box-shadow: 0 0 0 6px rgba(240, 90, 90, 0.07); }
+.form-modal__box h3 { font-size: 22px; margin: 0 0 10px; color: var(--text-primary); }
+.form-modal__box p { font-size: 15.5px; line-height: 1.6; color: var(--text-secondary); margin: 0 0 24px; }
+.form-modal__btn { min-width: 160px; justify-content: center; }
+@keyframes formModalFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes formModalPop { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .form-modal, .form-modal__box { animation: none; }
+}
