@@ -13,3 +13,8 @@
   background: var(--navy-950);
   color: var(--text-primary);
 }
+
+/* Elementos sobre verde: mantienen texto oscuro y el verde original */
+.theme-light .btn-primary { background: linear-gradient(135deg, #8fe356, #71c837); color: #05130a; }
+.theme-light .roi-banner { background: linear-gradient(135deg, #8fe356, #71c837); color: #05130a; }
+.theme-light .price-flag { color: #05130a; }
