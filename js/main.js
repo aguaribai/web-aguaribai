@@ -142,8 +142,27 @@ document.addEventListener('DOMContentLoaded', () => {
     countEls.forEach(el => countObserver.observe(el));
   }
 
+  // ---------- Agenda y WhatsApp: origen + medición ----------
+  const AGENDA_URL = 'https://aguaribai-agenda.base44.app';
+  function agendaUrl(lugar) {
+    const o = (typeof window.aguaribaiOrigen === 'function' && window.aguaribaiOrigen()) || {};
+    const p = new URLSearchParams();
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(k => { if (o[k]) p.set(k, o[k]); });
+    const q = p.toString();
+    return AGENDA_URL + (q ? '?' + q : '');
+  }
+  document.querySelectorAll('a[data-agenda]').forEach(a => {
+    if (a.classList.contains('form-modal__agenda')) return;
+    a.href = agendaUrl(a.dataset.agenda);
+  });
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[data-agenda], a[data-wa]');
+    if (!a || typeof window.aguaribaiTrack !== 'function') return;
+    window.aguaribaiTrack(a.dataset.agenda ? 'click_agendar' : 'click_whatsapp', { ubicacion: a.dataset.agenda || a.dataset.wa });
+  });
+
   // ---------- Ventana de confirmación del formulario ----------
-  function showFormModal(tipo, titulo, texto, siguiente) {
+  function showFormModal(tipo, titulo, texto, siguiente, accion) {
     const previo = document.getElementById('formModal');
     if (previo) previo.remove();
     const foco = document.activeElement;
@@ -161,11 +180,17 @@ document.addEventListener('DOMContentLoaded', () => {
         '<h3 id="formModalTitle"></h3>' +
         '<p id="formModalText"></p>' +
         (siguiente ? '<p class="form-modal__next"></p>' : '') +
+        (accion ? '<a class="btn btn-outline form-modal__agenda" target="_blank" rel="noopener" data-agenda="modal"></a>' : '') +
         '<button type="button" class="btn btn-primary form-modal__btn">Entendido</button>' +
       '</div>';
     overlay.querySelector('#formModalTitle').textContent = titulo;
     overlay.querySelector('#formModalText').textContent = texto;
     if (siguiente) overlay.querySelector('.form-modal__next').textContent = siguiente;
+    if (accion) {
+      const a = overlay.querySelector('.form-modal__agenda');
+      a.textContent = accion.texto;
+      a.href = accion.href;
+    }
     document.body.appendChild(overlay);
     document.body.classList.add('modal-open');
 
@@ -251,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           }
           form.reset();
-          showFormModal('success', '¡Gracias por dar el primer paso!', 'Detenerse a mirar cómo trabaja tu negocio es lo que separa a las empresas que mejoran de las que siguen igual. Ya hiciste lo más difícil: empezar.', 'Recibimos tu consulta. En las próximas 24 hs hábiles te escribimos para coordinar tu llamada gratuita.');
+          showFormModal('success', '¡Gracias por dar el primer paso!', 'Detenerse a mirar cómo trabaja tu negocio es lo que separa a las empresas que mejoran de las que siguen igual. Ya hiciste lo más difícil: empezar.', 'Recibimos tu consulta. En las próximas 24 hs hábiles te escribimos para coordinar tu llamada gratuita.', { href: agendaUrl('modal'), texto: 'O elegí tu horario ahora' });
         } else {
           throw new Error('Error al enviar');
         }

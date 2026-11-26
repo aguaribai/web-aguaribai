@@ -1157,3 +1157,13 @@ body.modal-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .priority-list::before, .priority-item, .priority-meter span { transition: none; }
 }
+
+/* Agenda y WhatsApp */
+.contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.contact-actions__note { flex-basis: 100%; margin: 4px 0 0; font-size: 14px; color: var(--text-muted); }
+.form-modal__agenda { width: 100%; justify-content: center; margin-bottom: 10px; }
+.wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 900; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,.28); transition: transform .2s; }
+.wa-float:hover { transform: scale(1.08); }
+.wa-float:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+body.modal-open .wa-float { display: none; }
+@media (prefers-reduced-motion: reduce) { .wa-float { transition: none; } }
